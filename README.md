@@ -69,13 +69,13 @@ $ ./iotsimulator.py 10000 > testdata.txt
 Send data to kafka topic
 
 
-/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotsimineuron
+/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotsimsuman
 
 /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --list --zookeeper localhost:2181
 
-/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list 172.18.0.2:6667 --topic iotsimineuron < testdata.txt
+/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list 172.18.0.2:6667 --topic iotsimsuman < testdata.txt
 
-/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.2:6667 --topic iotsimineuron --from-beginning
+/usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server 172.18.0.2:6667 --topic iotsimsuman --from-beginning
 
 
 ## 3. Analysis of data
@@ -286,7 +286,7 @@ The result shows console output of Spark Streaming which processed and analyzed 
 ```
 #Create Kafka Topic
 
-/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotsimineuron
+/usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic iotsimsuman
 
 #Install python pip
 
@@ -301,7 +301,7 @@ Run code of kafka-direct-iotmsg.py
 
 Then Send generated simulated data to Kafka using console Producer
 
-/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list 172.18.0.2:6667 --topic iotsimineuron < testdata.txt
+/usr/hdp/current/kafka-broker/bin/kafka-console-producer.sh --broker-list 172.18.0.2:6667 --topic iotsimsuman < testdata.txt
 
 <snip>
 
